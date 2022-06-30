@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.font1{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.font2{font-family: 'Satisfy', cursive;}
+
+.font3{font-family: 'Bad Script', cursive;
+font-size: larger;
+font-weight: bold;}

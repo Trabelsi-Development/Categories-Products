@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{titre}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input formControlName="nom" matInput placeholder="PC MSI">
+            <mat-icon matSuffix>text_fields</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Quantité</mat-label>
+            <input type ="number" formControlName="quantite"  matInput placeholder="40">
+            <mat-icon matSuffix>iso</mat-icon>
+          </mat-form-field>
+
+              <label for=""><h4>Disponibilité</h4></label>
+          <mat-radio-group formControlName="disponible" aria-label="Disponible" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" value="true">Oui</mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="false">Non</mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field style="margin-top: 20px;" appearance="outline">
+            <mat-label >Catégorie</mat-label>
+            <mat-select formControlName="id_cat" placeholder="Catégorie">
+              <mat-option *ngFor="let cat of categories" [value]="cat.id">
+                {{cat.id+" : "+cat.nom}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+    </form>
+</div>
+    <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="primary" (click)="ajouterProd()">{{actionBtn}}</button>
+          <button style="margin-left: 8px" mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+</div>

@@ -1,0 +1,37 @@
+<mat-toolbar style="background: #bfeaff;">
+   <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+  <img style="margin-right: 20px; margin-left: 20px;" src="../assets/images/trc.png" alt="" class="img-fluid">
+  
+  <span class="font3">TRABELSI Company</span>
+  
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container"  class="mat-elevation-z8" >
+
+  <mat-sidenav mode="side" opened #sidenav="matSidenav" >
+    <button routerLink="/" mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>Catégories</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button routerLink="/produits" mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Produits</span>
+  </button>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content mat-elevation-z8">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
